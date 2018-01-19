@@ -20,7 +20,7 @@ namespace Als_Net_Core_2.Pages
 
         public async Task OnGetAsync()
         {
-            Leagues = await _db.Leagues.ToListAsync();
+            Leagues = await _db.Leagues.AsNoTracking().ToListAsync();
         }
     }
 }
