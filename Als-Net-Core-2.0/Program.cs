@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace Als_Net_Core_2._0
+namespace Web
 {
     public class Program
     {

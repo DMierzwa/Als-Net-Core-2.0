@@ -1,11 +1,9 @@
-﻿using Als_Net_Core_2.Data;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
-namespace Als_Net_Core_2._0
+namespace Web
 {
     public class Startup
     {
@@ -21,8 +19,6 @@ namespace Als_Net_Core_2._0
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MySqlContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-
             services.AddMvc();
         }
 
@@ -30,9 +26,7 @@ namespace Als_Net_Core_2._0
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseMvc();
         }

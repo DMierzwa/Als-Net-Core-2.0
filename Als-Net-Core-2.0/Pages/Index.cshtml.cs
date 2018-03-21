@@ -1,26 +1,18 @@
-﻿using Als_Net_Core_2.Data;
-using Als_Net_Core_2.Models;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
 
-namespace Als_Net_Core_2.Pages
+namespace Web
 {
     public class IndexModel : PageModel
     {
-        private MySqlContext _db;
+        //public IList<League> Leagues { get; set; } = new List<League>();
 
-        public IList<League> Leagues { get; set; }
-
-        public IndexModel(MySqlContext db)
+        public IndexModel()
         {
-            _db = db;
         }
 
-        public async Task OnGetAsync()
+        public async Task OnGet()
         {
-            Leagues = await _db.Leagues.AsNoTracking().ToListAsync();
         }
     }
 }
